@@ -9,7 +9,7 @@
         font-family: "Arial", sans-serif;
         margin: 0;
         padding: 0;
-        background-color: rgb(237, 239, 245); /* Lighter background */
+        background-color: #f1f1f1; /* Light background */
         background-image: url("70181865efd222e8255df820e504242c.png"),
           url("rightwave.png"); /* Add your image URL here */
         background-repeat: repeat-y; /* Repeat the image horizontally */
@@ -28,9 +28,9 @@
       }
 
       .container {
-        max-width: calc(100% - 10cm); /* 5cm gap from each side */
+        max-width: 800px; /* Limiting container width for better readability */
         margin: 0 auto;
-        padding: 3cm 0;
+        padding: 20px;
         box-sizing: border-box;
         text-align: center;
       }
@@ -39,91 +39,74 @@
         text-align: center;
         padding: 20px;
         margin: 0;
-        font-family: "Indie Flower", cursive;
-        font-size: 25px;
-        /*text-transform: uppercase;*/
+        font-family: "Roboto", sans-serif;
+        font-size: 30px; /* Larger font size for headings */
         letter-spacing: 2px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        border: 2px solid royalblue; /* Royal blue border */
-        border-radius: 10px;
-        display: inline-block;
-        background: linear-gradient(
-          to right,
-          #6495ed 0%,
-          #87cefa 100%
-        ); /* Gradient background */
-        padding: 10px 20px;
-        box-shadow: 0 0 20px rgba(136, 0, 255, 0.5); /* Blood-like color shadow effect */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        color: #333; /* Dark text color */
       }
 
-      /* Search bar styling */
       #searchBar {
-        padding: 15px;
-        width: 80%;
-        border: 2px solid royalblue; /* Royal blue border */
-        border-radius: 20px;
-        margin: 3cm auto;
-        display: inline-block;
-        outline: none;
-        background-color: #fff; /* White background */
-        color: #000; /* Black text color */
-        font-size: 18px;
-        box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); /* Blood-like color shadow effect */
-        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px; /* Space between search bar and table */
       }
 
       #searchBar input[type="text"] {
-        width: calc(100% - 40px);
-        border: none;
+        flex: 1;
+        padding: 10px;
+        border: 2px solid #333; /* Dark border */
+        border-radius: 20px; /* Rounded corners */
+        font-size: 16px;
         outline: none;
-        background: transparent;
-        color: #000;
-        font-size: 18px;
-        padding: 5px 10px;
       }
 
       #searchBar button {
-        width: 80px; /* Adjusted width */
-        height: 40px;
+        padding: 10px 20px;
+        margin-left: 10px;
         border: none;
-        outline: none;
-        background-color: royalblue;
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        right: 5px;
-        transform: translateY(-50%);
         border-radius: 20px;
-        box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Blood-like color shadow effect */
+        background-color: #4caf50; /* Green button */
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth hover transition */
       }
 
-      /* Table styling */
+      #searchBar button:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+
       #orderTable {
-        width: 80%;
-        margin: 0 auto;
+        width: 100%;
         border-collapse: collapse;
+        background-color: white; /* White table background */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
       }
 
       #orderTable th,
       #orderTable td {
-        border: 1px solid #dddddd;
+        border: 1px solid #ddd; /* Light gray border */
         padding: 8px;
-        text-align: left;
       }
 
       #orderTable th {
-        background-color: #f2f2f2;
+        background-color: #f2f2f2; /* Light gray header */
       }
 
       .view-document-button {
         padding: 10px 20px;
-        background-color: royalblue;
-        color: #fff;
+        background-color: #333; /* Dark button color */
+        color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+      }
+
+      .view-document-button:hover {
+        background-color: #555; /* Darker button color on hover */
       }
     </style>
   </head>
@@ -136,8 +119,6 @@
           style="width: 50px; height: 40px"
         />
       </h2>
-
-      <!-- Adjust width and height as needed -->
     </div>
     <div class="container">
       <h1>Customer Order Details</h1>
