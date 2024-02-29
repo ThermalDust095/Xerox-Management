@@ -97,6 +97,7 @@
     border-radius: 15px;
     box-sizing: border-box;
     background-color: #FFF5F5;
+    box-shadow: 7px 7px 7px 7px rgb(5, 64, 83);
 }
 
 .box-content {
@@ -105,11 +106,20 @@
     /* font-family: cursive; */
 }
 
+h2 {
+    margin-top: 2px;
+    margin-left: 55px;
+}
+
 .order-details {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
+}
+.user-details {
+    margin-left: auto;
+    padding: auto;
 }
 .user-details, .file-container {
     width: 48%;
@@ -144,6 +154,7 @@
 
 .action-images {
     margin-top: 4px;
+    margin-left: 20px;
 }
 
 .action-image {
