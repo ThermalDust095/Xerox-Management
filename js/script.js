@@ -23,21 +23,39 @@ document.getElementById("ordersBtn").addEventListener("click", function(){
     const boxContent = document.createElement('div');
     boxContent.className = "box-content";
 
-    
-    const content = `
-    <h2>Order No: ${sampleOrder.orderNo}</h2>
+    const orderNumber=document.createElement('h2');
+    orderNumber.textContent=`Order No: ${sampleOrder.orderNo}`;
+    boxContent.appendChild(orderNumber);
+
+    const orderDetails=document.createElement('div');
+    orderDetails.className="order-details";
+
+    const userDetails=document.createElement('div');
+    userDetails.className="user-details";
+    userDetails.innerHTML=`
     <p>Name: ${sampleOrder.name}</p>
     <p>USN: ${sampleOrder.usn}</p>
-    <p><a href="${sampleOrder.file}" id="fileLink"><img src="img/file-img.png" alt="File Image" class="file-image"></a></p> 
-    <p>Description: ${sampleOrder.description}</p>
-    <div class="action-images">
-        <img src="img/accept.png" alt="Accept Image" class="action-image accept-image"> 
-        <img src="img/reject.png" alt="Reject Image" class="action-image reject-image">
-    </div>`;
-
-    boxContent.innerHTML = content;
-
+    <p>Description: ${sampleOrder.description}</p>`;
     
+    orderDetails.appendChild(userDetails);
+
+    const fileContainer=document.createElement('div');
+    fileContainer.className="file-container";
+    fileContainer.innerHTML=`
+    <p><a href="${sampleOrder.file}" id="fileLink"><img src="img/file-img.png" alt="File Image" class="file-image"></a></p>`;
+
+    orderDetails.appendChild(fileContainer);
+
+    boxContent.appendChild(orderDetails);
+
+    const confirmationContainer=document.createElement('div');
+    confirmationContainer.className="action-images";
+    confirmationContainer.innerHTML=`
+    <img src="img/accept.png" alt="Accept Image" class="action-image accept-image"> 
+    <img src="img/reject.png" alt="Reject Image" class="action-image reject-image">`;
+
+    boxContent.appendChild(confirmationContainer);
+
     boxContainer.appendChild(boxContent);
 
     
