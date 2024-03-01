@@ -1,43 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Metal+Mania&family=Pavanam&display=swap');
+
 *{
     margin: 0px;
     font-family: Arial;
     border: border-box;
 }
 
+header{
+    position: relative;
+    z-index: 10;
+}
+
 .navbar {
-    height: 40px;
+    height: 55px;
     background-color: #FFFEFE;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
+    gap: 5px;
+
 }
+
 
 .navbar-name {
     width: 84px;
     height:31px;
-    /* margin-left: 700px; */
-    margin-top: 6px;
-    margin-right: 10px;
+    /* margin-left: 700px;
+    margin-top: 6px; */
 }
 
 .navbar-name p {
-    font-size: 27px;
+    font-size: 40px;
     font-style: italic;
+    font-family: "Just Me Again Down Here", cursive;;
     font-weight: 400;
-    font-weight: cursive;
+    position: relative;
+    bottom: 15px;
+}
+
+#pink-header{
+    width: 100%;
+    height: 20px;
+    background-color: #FECDDB;
+}
+
+#second-header{
+    width: 100%;
+    background-color: #FFF5F5;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btw-div{
+    width: 70%;
+    height: 20px;
+    background: rgba(236, 236, 236, 1);
+    border-radius: 10px;
+
 }
 
 .border {
     border: 1.5px solid transparent;
     /* border-radius: 8px; */
 }
-
+/* .border:hover {
+    background-color: cornsilk;
+} */
 .navbar-logo {
     height: 29px;
     width: 29px;
-    margin-top: 8px;
-    /* margin-left: 4px; */
+    /* margin-top: 8px;
+    margin-left: 4px; */
 }
 
 .logo {
@@ -48,8 +86,9 @@
     cursor: pointer;
 }
 
+
 .order-container {
-    /* border: 2px solid red; */
+    border: 1px solid #ff000000;
     background-color: #D4ECFF;
 }
 .btn-container {
@@ -88,7 +127,6 @@
 }
 
 .box-container {
-    /* border: 1px solid black; */
     margin-top: 14px;
     margin-left: 18px;
     height: 205px;
@@ -97,7 +135,7 @@
     border-radius: 15px;
     box-sizing: border-box;
     background-color: #FFF5F5;
-    box-shadow: 7px 7px 7px 7px rgb(5, 64, 83);
+    box-shadow: 6px 9px 0px 2px rgb(10 77 99);  
 }
 
 .box-content {

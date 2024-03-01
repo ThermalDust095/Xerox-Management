@@ -1,29 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Metal+Mania&family=Pavanam&display=swap');
+
+
 *{
     margin: 0px;
     font-family: Arial;
     border: border-box;
+    font-family: "Pavanam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  
+}
+
+body{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+header{
+    position: relative;
+    z-index: 10;
 }
 
 .navbar {
-    height: 40px;
+    height: 55px;
     background-color: #FFFEFE;
     color: black;
     display: flex;
     align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
+    gap: 5px;
+
 }
+
 
 .navbar-name {
     width: 84px;
     height:31px;
-    margin-left: 700px;
-    margin-top: 6px;
+    /* margin-left: 700px;
+    margin-top: 6px; */
 }
 
 .navbar-name p {
-    font-size: 27px;
+    font-size: 40px;
     font-style: italic;
+    font-family: "Just Me Again Down Here", cursive;;
     font-weight: 400;
-    font-weight: cursive;
+    position: relative;
+    bottom: 15px;
+}
+
+#pink-header{
+    width: 100%;
+    height: 20px;
+    background-color: #FECDDB;
+}
+
+#second-header{
+    width: 100%;
+    background-color: #FFF5F5;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btw-div{
+    width: 70%;
+    height: 20px;
+    background: rgba(236, 236, 236, 1);
+    border-radius: 10px;
+
 }
 
 .border {
@@ -36,8 +84,8 @@
 .navbar-logo {
     height: 29px;
     width: 29px;
-    margin-top: 8px;
-    margin-left: 4px;
+    /* margin-top: 8px;
+    margin-left: 4px; */
 }
 
 .logo {
@@ -54,50 +102,81 @@
     height:750px;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
 }
  .form-intro { 
-    position: absolute;
+    position: relative;
     top: 30px;
-    left: 42%;
+    /* left: 42%; */
 }
 
 .form-section h2 {
     /* margin-top: 10px; */
-    text-align: center;
+    /* text-align: center; */
+    font-size: 32px;
+    font-weight: 500;
 }
 
 .form-container {
     border: 1.5px solid white;
     background-color: #FFFFFF;
-    width: 370px;
+    width: 600px;
+    height: 422px;
     position: absolute;
     top: 100px;
-    left: 38%;
+    left: 31%;
     border-radius: 18px;
-    z-index: 1;
+    z-index: 1; 
+}
+
+#orderForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 15px;
+    color: #000000a5;
+    transition: 0.5s;
 }
 
 #orderForm label, input, textarea, button {
     margin-left: 15px;
     font-family: cursive; 
+    margin-right: 15px;
 }
 
 #orderForm input, textarea, button {
     cursor: pointer;
+    border-color: #00000035;
+    border-width: 3px;
 }
 
-#orderForm input:hover {
-    background-color: blanchedalmond;
+#orderForm input{
+    height: 24px;
 }
+
+/* #orderForm input:hover {
+    background-color: rgb(11, 210, 217);
+} */
 
 .btn-submit {
     border: none;
     border-radius: 10px;
+    height: 46px;
+    width: 87px;
+    position: relative;
+    left: 40%;
+    background-color: #48adffb9;
+    color: #fff;
+    font-size: 16px;
+    
 }
 
-.btn-submit:hover {
+/* .btn-submit:hover {
     background-color: blanchedalmond;
-}
+} */
 
 .bg-img {
     position: absolute;
@@ -107,6 +186,9 @@
     width: 100%;
     display: flex;
     z-index: -1;
+    background-image: url("/img/waves.svg");
+    background-repeat: repeat-x;
+    background-size: 1597px 350px;
 }
 .bg-img1 {
     /* border: 1.5px solid black; */
@@ -142,5 +224,14 @@
     height: auto;
     z-index: 1;
 
+}
+
+#other-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90%;
+    transition: 0.5s;
 }
 
