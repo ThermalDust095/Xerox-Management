@@ -244,14 +244,16 @@ header{
         $("#orderTable").hide()
 
         $("#submit-btn").click(async() => {
-          $("#orderTable").find("tr").remove();
+          $("#orderContainer").find("tr").remove();
           let usn = $("#usn-input").val();
           console.log(usn)
           
           res = await fetch(`http://127.0.0.1:5000/user/${usn}`)
           user = await res.json()
 
-          user.orders.map(async(orderId, idx) => {
+          console.log(user.orders)
+
+          for (var orderId of user.orders ){
             order = {}
             res = await fetch(`http://127.0.0.1:5000/order/${orderId}`)
             order = await res.json();
@@ -265,8 +267,9 @@ header{
             }
             console.log(orderId, order)
             addOrder(orderId, order, file)
-          })
-          $("#orderTable").show(400)
+          }
+
+          $("#orderTable").show(500)
         })
         
       })
