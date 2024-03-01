@@ -15,9 +15,9 @@ app.get("/order-history", (req, res) => {
   res.sendFile(__dirname + "/dbms5.html");
 });
 
-app.get("/client", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
+// app.get("/client", (req, res) => {
+//   res.sendFile(__dirname + "/index.html");
+// });
 
 const PORT = process.env.PORT || 8080;
 
