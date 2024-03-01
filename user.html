@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiftly</title>
     <link rel="stylesheet" href="css/user.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
@@ -26,20 +27,16 @@
 
     <div class="form-section">
         <div class="form-intro">
-            <h2>Good to see you again</h2>
+            <h2 data-aos="zoom-in">Good to see you again</h2>
         </div>
 
-        <div class="form-container">
+        <div class="form-container" data-aos="zoom-in">
             <form id="orderForm" >
                 <label for="name">Name: </label>
                 <input type="text" id="name" name="name" placeholder="Eg: Alan" required>
 
-                
-
                 <label for="usn">USN: </label>
                 <input type="text" id="usn" name="usn" placeholder="Eg: 1DT21CS012" required>
-
-                
 
                 <label for="file">File Upload: </label>
                 <input type="file" id="file" name="file">
@@ -60,7 +57,7 @@
             </div>
 
         </div>
-        <div class="bg-img">
+        <div class="bg-img" data-aos="fade-up">
             <!-- <div class="bg-img1">
                 <img src="img/img1.png" alt="">
             </div>
@@ -76,7 +73,11 @@
         
     </div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+
+AOS.init();
+
 
 $("#other-div").hide()
 $("#orderForm").submit(async function(e){

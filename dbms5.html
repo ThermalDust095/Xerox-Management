@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swiftly</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Metal+Mania&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Metal+Mania&family=Pavanam&display=swap');
@@ -101,11 +103,12 @@ header{
         margin: 0;
         padding: 0;
         background-color: #f1f1f1; /* Light background */
-        background-image: url("waves.png"),
-          url("rightwave.png"); /* Add your image URL here */
+        /* background-image: url("waves.png"),
+          url("rightwave.png"); Add your image URL here */
         background-repeat: repeat-y; /* Repeat the image horizontally */
         background-position: bottom left, bottom right; /* Position the image at the top center */
         background-size: 290px auto;
+        transition: 1s  ;
       }
 
       .top-bar {
@@ -220,8 +223,9 @@ header{
           </div>
       </div>
   </header>
+    
 
-    <div class="container">
+    <div class="container" data-aos="zoom-in">
       <h1>Customer Order Details</h1>
       <div id="searchBar">
         <input type="text" placeholder="Search by USN"  id="usn-input"/>
@@ -243,7 +247,12 @@ header{
       </table>
     </div>
 
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+
+    AOS.init();
+
 
       $(document).ready(() =>{
         $("#orderTable").hide()
