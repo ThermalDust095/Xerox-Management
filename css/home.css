@@ -332,7 +332,7 @@ header{
     display: flex;
     flex-direction: column  ;
     gap: 2vw;
-    margin-left: 3  vw;
+    margin-left: 3vw;
     justify-content: center;
     top: -7vh;
 }
