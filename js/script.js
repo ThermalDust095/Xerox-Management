@@ -44,7 +44,7 @@ function create_div(sampleOrder) {
   const fileContainer = document.createElement("div");
   fileContainer.className = "file-container";
   fileContainer.innerHTML = `
-    <p><a href="http://127.0.0.1:5000/download/${sampleOrder.file}" id="fileLink"><img src="img/file-img.png" alt="File Image" class="file-image"></a></p>`;
+    <p><a href="http://127.0.0.1:5000/download/${sampleOrder.file}" target="__blank" id="fileLink"><img src="img/file-img.png" alt="File Image" class="file-image"></a></p>`;
 
   orderDetails.appendChild(fileContainer);
 

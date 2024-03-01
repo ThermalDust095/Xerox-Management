@@ -43,12 +43,12 @@ header{
 }
 
 .navbar-name p {
-    font-size: 40px;
+    font-size: 50px;
     font-style: italic;
     font-family: "Just Me Again Down Here", cursive;;
     font-weight: 400;
     position: relative;
-    bottom: 15px;
+    bottom: 30px;
 }
 
 #pink-header{
@@ -84,6 +84,8 @@ header{
 .navbar-logo {
     height: 29px;
     width: 29px;
+    position: relative;
+    left: 17px;
     /* margin-top: 8px;
     margin-left: 4px; */
 }
