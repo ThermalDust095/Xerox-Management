@@ -91,7 +91,7 @@ $("#orderForm").submit(async function(e){
     formData.append("file", file)
     formData.append('desc', $("#description").val())
 
-    await fetch("http://13.229.230.244:5000/post-user", {  
+    await fetch("http://127.0.0.1:5000/post-user", {  
     method: "POST",
     headers: {
         "Content-Type": "application/json" // Specify the content type as JSON
@@ -103,7 +103,7 @@ $("#orderForm").submit(async function(e){
     mode: "cors"
     })
 
-    res = await fetch(`http://13.229.230.244:5000/post-order/${usn}`, {
+    res = await fetch(`http://127.0.0.1:5000/post-order/${usn}`, {
         method: "POST"
     })
 
@@ -112,7 +112,7 @@ $("#orderForm").submit(async function(e){
 
     console.log(order_id)
 
-    res = await fetch(`http://13.229.230.244:5000/upload-file/${order_id}`,{
+    res = await fetch(`http://127.0.0.1:5000/upload-file/${order_id}`,{
         method: "POST",
         body: formData
     })

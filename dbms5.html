@@ -262,21 +262,21 @@ header{
           let usn = $("#usn-input").val();
           console.log(usn)
           
-          res = await fetch(`http://13.229.230.244:5000/user/${usn}`)
+          res = await fetch(`http://127.0.0.1:5000/user/${usn}`)
           user = await res.json()
 
           console.log(user.orders)
 
           for (var orderId of user.orders ){
             order = {}
-            res = await fetch(`http://13.229.230.244:5000/order/${orderId}`)
+            res = await fetch(`http://127.0.0.1:5000/order/${orderId}`)
             order = await res.json();
             
             file = {}
 
             if (order.files.length != 0){
               file_path = order.files[0]
-              res2 = await fetch(`http://13.229.230.244:5000/file/${file_path}`)
+              res2 = await fetch(`http://127.0.0.1:5000/file/${file_path}`)
               file = await res2.json();
             }
             console.log(orderId, order)
