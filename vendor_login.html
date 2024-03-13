@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiftly - Login</title>
+    <style>
+      /* Resetting default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f6ff; /* Light bluish background color */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url("70181865efd222e8255df820e504242c.png"),
+          url("rightwave.png"); /* Add your image URL here */
+        background-repeat: repeat-y; /* Repeat the image horizontally */
+        background-position: bottom left, bottom right; /* Position the image at the bottom */
+        background-size: 290px auto;
+        height: 100vh;
+      }
+
+      .top-bar {
+        width: 100%;
+        background-color: #ffffff; /* Blue color for the top bar */
+        color: rgb(8, 8, 8);
+        font-family: "Comic Sans MS", cursive;
+        font-size: 24px;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0 0 20px rgb(0, 0, 0);
+        position: fixed; /* Fix the top bar to the top of the screen */
+        top: 0; /* Move the top bar to the top */
+        z-index: 1; /* Ensure the top bar appears above other elements */
+      }
+
+      .container {
+        width: 500px;
+        height: 400px;
+        padding: 40px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-top: 80px; /* Add margin to avoid overlapping the top bar */
+      }
+
+      h1 {
+        font-family: "Comic Sans MS", cursive;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="submit"],
+      input[type="button"] {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      input[type="submit"] {
+        background: linear-gradient(to right, #007bff, #6a0dad);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      input[type="submit"]:hover {
+        background: linear-gradient(to right, #0056b3, #4b0082);
+      }
+
+      .forgot-password,
+      .create-account {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .forgot-password:hover,
+      .create-account:hover {
+        text-decoration: underline;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .remember-me input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      /* Adding more styling */
+      .container {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      Swiftly<img
+        src="plane.png"
+        alt="Logo"
+        style="width: 50px; height: 40px"
+      />
+    </div>
+    <div class="container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <input
+          type="text"
+          name="Vendor's Username"
+          placeholder="Vendor's Username"
+          required
+        /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        /><br />
+        <div class="remember-me">
+          <input type="checkbox" id="remember" name="remember" />
+          <label for="remember">Remember Me</label>
+        </div>
+        <input type="submit" value="Login" />
+      </form>
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <a href="#" class="create-account">Create an Account with us</a>
+    </div>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Add your login logic here
+          alert("Login functionality has not been implemented yet!");
+        });
+    </script>
+  </body>
+</html>
