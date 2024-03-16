@@ -215,7 +215,7 @@ header{
       </div>
       <div class="navbar">
           <div class="navbar-name border">
-              <p onclick="window.location.href = '/'" style="cursor: pointer;">Swiftly</p>
+              <p onclick="window.location.href = '/home'" style="cursor: pointer;">Swiftly</p>
           </div>
 
           <div class="navbar-logo border">
@@ -227,10 +227,10 @@ header{
 
     <div class="container" data-aos="zoom-in">
       <h1>Customer Order Details</h1>
-      <div id="searchBar">
+      <!-- <div id="searchBar">
         <input type="text" placeholder="Search by USN"  id="usn-input"/>
         <button id="submit-btn">Submit</button> 
-      </div>
+      </div> -->
       <table id="orderTable">
         <thead>
           <tr>
@@ -254,12 +254,11 @@ header{
     AOS.init();
 
 
-      $(document).ready(() =>{
+      $(document).ready(async() =>{
         $("#orderTable").hide()
 
-        $("#submit-btn").click(async() => {
-          $("#orderContainer").find("tr").remove();
-          let usn = $("#usn-input").val();
+        $("#orderContainer").find("tr").remove();
+          let usn = sessionStorage.getItem("usn")
           console.log(usn)
           
           res = await fetch(`http://127.0.0.1:5000/user/${usn}`)
@@ -284,7 +283,6 @@ header{
           }
 
           $("#orderTable").show(500)
-        })
         
       })
 

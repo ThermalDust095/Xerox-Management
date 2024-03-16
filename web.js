@@ -3,8 +3,12 @@ const app = express();
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
   res.sendFile(__dirname + "/homepage.html");
+});
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/login.html");
 });
 
 app.get("/new-order", (req, res) => {
@@ -14,6 +18,10 @@ app.get("/new-order", (req, res) => {
 app.get("/order-history", (req, res) => {
   res.sendFile(__dirname + "/dbms5.html");
 });
+
+app.get("/create", (req, res) => {
+  res.sendFile(__dirname + "/signup.html")
+})
 
 // app.get("/client", (req, res) => {
 //   res.sendFile(__dirname + "/index.html");
