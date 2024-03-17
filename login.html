@@ -95,21 +95,21 @@ async function handleFormSubmit(event) {
     cont.innerHTML = "Successful"
     setTimeout(() =>{
         window.location.href = "/home"
-    }, 2000);
+    }, 500);
   }
   
   if (data.Valid == false){
     cont.innerHTML = "Unsucessful"
     setTimeout(() =>{
         window.location.href = "/"
-    }, 2000);
+    }, 1000);
   }
 
   if (data.Valid == "NotFound"){
     cont.innerHTML = "Username Not Found"
     setTimeout(() =>{
         window.location.href = "/"
-    }, 2000);
+    }, 1000);
 
   }
 
