@@ -21,8 +21,8 @@ db_username = os.getenv("DATABASE_USERNAME")
 db_password = os.getenv("DATABASE_PASSWORD")
 db_name = os.getenv("DATABASE_NAME")
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@mysql_db/{db_name}'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_username}:{db_password}@mysql_db/{db_name}'
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
 app.config["SQLALCHEMY_TRACK_NOTIFICATIONS"] = False
 
 UPLOAD_FOLDER = './files'
