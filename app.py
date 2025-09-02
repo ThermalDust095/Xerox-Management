@@ -4,7 +4,6 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from markupsafe import escape
 from flask import request
-from werkzeug.utils import secure_filename
 import json 
 import os
 import random
