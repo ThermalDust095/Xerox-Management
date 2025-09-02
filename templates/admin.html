@@ -42,7 +42,7 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <script>
         $("body").hide()
-        let pass = prompt("Enter Admin Password:", "")
+        let pass = prompt("Demo Admin Password: root \nEnter Admin Password:", "")
 
         if (pass === "{{password}}"){
             $("body").show()

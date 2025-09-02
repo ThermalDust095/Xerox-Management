@@ -123,9 +123,14 @@ header{
   }
 
   h1 {
-    font-family: "Comic Sans MS", cursive;
     color: #333;
     margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #df1616;
+    font-size:medium;
+    font-weight: 200;
   }
 
   input[type="text"],
@@ -235,3 +240,5 @@ header{
     text-align: center;
     margin-top: 80px; /* Add margin to avoid overlapping the top bar */
   }
+
+  
