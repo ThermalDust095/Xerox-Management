@@ -21,8 +21,13 @@ db_username = os.getenv("DATABASE_USERNAME", "root")
 db_password = os.getenv("DATABASE_PASSWORD", "Root-123")
 db_name     = os.getenv("DATABASE_NAME", "xerox")
 railway_private = os.getenv("RAILWAY_PRIVATE_DOMAIN")
-fallback_uri = f"mysql+pymysql://{db_username}:{db_password}@mysql_db/{db_name}"
-db_url = f"mysql+pymysql://{db_username}:{db_password}@{railway_private}/{db_name}" if railway_private else fallback_uri
+
+
+db_url = f"mysql+pymysql://{db_username}:{db_password}@{railway_private}/{db_name}" \
+         if railway_private else f"mysql+pymysql://{db_username}:{db_password}@mysql_db/{db_name}"
+
+print("Connecting to:", db_url)  # << check logs
+
 
 app.config["SQLALCHEMY_DATABASE_URI"] = db_url
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
