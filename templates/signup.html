@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiftly</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/login.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
@@ -29,31 +29,28 @@
         <div id="left-wave" data-aos="fade-right"></div>
         <div id="right-wave" data-aos="fade-left"></div>
 
-        <div class="container" data-aos="zoom-in">
-            <h1>Login</h1>
-            <form id="login-form">
+        <div class="sign-container" data-aos="zoom-in">
+            <h1>Sign Up</h1>
+            <form id="signup-form">
+              <input type="text" name="name" placeholder="Name" required /><br />
+              <input type="email" name="email" placeholder="Email" required /><br />
+              <input type="text" name="usn" placeholder="USN" required /><br />
               <input
                 type="text"
-                name="USN"
-                placeholder="USN"
-                id="usn"
+                name="username"
+                placeholder="Username"
                 required
               /><br />
               <input
                 type="password"
                 name="password"
-                id="password"
                 placeholder="Password"
                 required
               /><br />
-              <div class="remember-me">
-                <input type="checkbox" id="remember" name="remember" />
-                <label for="remember">Remember Me</label>
-              </div>
-              <input type="submit" value="Login" />
+              <input type="submit" value="Sign Up" />
             </form>
             <a href="#" class="forgot-password">Forgot Password?</a>
-            <a href="create" class="create-account" href="/create">Create an Account with us</a>
+            <a href="/" class="create-account">Already have an account? Log in</a>
           </div>
     </section>
 
@@ -63,11 +60,13 @@
 <script>
 AOS.init();
 
-// Function to serialize form data into a JSON object
 function serializeFormToJson(form) {
   var formData = {};
-  formData["usn"] = document.querySelector("#usn").value
-  formData["password"] = document.querySelector("#password").value
+  var inputs = form.querySelectorAll('input');
+
+  inputs.forEach(function(input) {
+    formData[input.name] = input.value;
+  });
 
   return formData;
 }
@@ -75,48 +74,20 @@ function serializeFormToJson(form) {
 async function handleFormSubmit(event) {
   event.preventDefault(); 
   
-  var form = document.getElementById('login-form');
+  var form = document.getElementById('signup-form');
   var formData = serializeFormToJson(form);
   
   console.log(formData); 
 
-  const res = await fetch("http://127.0.0.1:5000/auth-user", {
-    method: "POST",
+  await fetch("http://127.0.0.1:5000/create-acc", {
+    method: 'POST',
     body: JSON.stringify(formData)
   })
 
-  const data = await res.json()
-  console.log(data)
-
-  cont = document.querySelector(".container")
-
-  if (data.Valid == true){
-    sessionStorage.setItem("usn", document.querySelector("#usn").value)
-    cont.innerHTML = "Successful"
-    setTimeout(() =>{
-        window.location.href = "/home"
-    }, 500);
-  }
-  
-  if (data.Valid == false){
-    cont.innerHTML = "Unsucessful"
-    setTimeout(() =>{
-        window.location.href = "/"
-    }, 1000);
-  }
-
-  if (data.Valid == "NotFound"){
-    cont.innerHTML = "Username Not Found"
-    setTimeout(() =>{
-        window.location.href = "/"
-    }, 1000);
-
-  }
-
+  window.location.href = "/"
 }
 
-// Add event listener to form submission
-document.getElementById('login-form').addEventListener('submit', handleFormSubmit);
+document.getElementById('signup-form').addEventListener('submit', handleFormSubmit);
 
 
 </script>
