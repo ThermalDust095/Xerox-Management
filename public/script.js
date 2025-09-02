@@ -1,6 +1,6 @@
 $(document).ready(async () => {
   console.log("ready..");
-  let res = await fetch("{{url_for('get_pending_orders')}}");
+  let res = await fetch("{{ url_for('get_pending_orders')}} ");
   let orders = await res.json();
   $("#count-h").html(`Order Count: ${orders.count}`)
   $(".box-container").remove();
@@ -9,7 +9,7 @@ $(document).ready(async () => {
 
   setInterval(async () => {
     let no_of_orders = 0;
-    let res = await fetch("{{url_for('get_pending_orders')}}");
+    let res = await fetch("{{ url_for('get_pending_orders') }}");
     let orders = await res.json();
 
     if (orders.length != no_of_orders) {
@@ -46,7 +46,7 @@ function create_div(sampleOrder) {
 
   const fileContainer = document.createElement("div");
   fileContainer.className = "file-container";
-  FILE_DOWNLOAD_URL = `{{url_for('download_file', name='${sampleOrder.file}')}}`
+  FILE_DOWNLOAD_URL = `{{ url_for('download_file', name='${sampleOrder.file}') }}`
   fileContainer.innerHTML = `
     <p><a href="${FILE_DOWNLOAD_URL}" target="__blank" id="fileLink"><img src="../public/file-img.png" alt="File Image" class="file-image"></a></p>`;
 
@@ -71,7 +71,7 @@ function create_div(sampleOrder) {
 
   acceptMessage.addEventListener("click", async function() {
     console.log("Accepted");
-    await fetch("{{url_for('update_order')}}", {
+    await fetch("{{ url_for('update_order') }}", {
       method: "POST",
       body: JSON.stringify({
         order_id: sampleOrder.id,
@@ -83,7 +83,7 @@ function create_div(sampleOrder) {
 
   rejectMessage.addEventListener("click", async function() {
     console.log("Rejected");
-    await fetch("{{url_for('update_order')}}", {
+    await fetch("{{ url_for('update_order') }}", {
       method: "POST",
       body: JSON.stringify({
         order_id: sampleOrder.id,
