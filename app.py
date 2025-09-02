@@ -36,7 +36,7 @@ print("Connecting to:", db_url)  # << check logs
 app.config["SQLALCHEMY_DATABASE_URI"] = db_url
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-UPLOAD_FOLDER = './files'
+UPLOAD_FOLDER = '/app/files'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'docx'}
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
