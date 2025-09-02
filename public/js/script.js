@@ -1,5 +1,5 @@
 $(document).ready(async () => {
-  let res = await fetch("http://127.0.0.1:5000/pending-orders");
+  let res = await fetch("{{url_for('get_pending_orders')}}");
   let orders = await res.json();
   $(".box-container").remove();
   console.log(orders.orders);
@@ -7,7 +7,7 @@ $(document).ready(async () => {
 
   setInterval(async () => {
     let no_of_orders = 0;
-    let res = await fetch("http://127.0.0.1:5000/pending-orders");
+    let res = await fetch("{{url_for('get_pending_orders')}}");
     let orders = await res.json();
 
     if (orders.length != no_of_orders) {
