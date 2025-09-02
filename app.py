@@ -22,11 +22,13 @@ db_password = os.getenv("DATABASE_PASSWORD", "Root-123")
 db_name     = os.getenv("DATABASE_NAME", "xerox")
 railway_private = os.getenv("RAILWAY_PRIVATE_DOMAIN")
 
-db_url = os.getenv("RAILWAY_PRIVATE_DOMAIN")
-if db_url:
-    db_url = f"mysql+pymysql://{db_username}:{db_password}@{db_url}/{db_name}"
-else:
-    db_url = os.getenv("DATABASE_URL")  # public fallback
+# db_url = os.getenv("RAILWAY_PRIVATE_DOMAIN")
+# if db_url:
+#     db_url = f"mysql+pymysql://{db_username}:{db_password}@{db_url}/{db_name}"
+# else:
+#     db_url = os.getenv("DATABASE_URL")  # public fallback
+
+db_url = os.getenv("DATABASE_URL")
 
 print("Connecting to:", db_url)  # << check logs
 
