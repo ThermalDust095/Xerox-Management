@@ -29,4 +29,4 @@ ENV FLASK_APP=app.py \
     UPLOAD_FOLDER=files
 
 # Run Flask
-CMD ["flask", "run"]
+CMD ["python3", "app.py"]
