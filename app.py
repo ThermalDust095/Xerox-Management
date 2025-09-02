@@ -20,10 +20,13 @@ load_dotenv()
 db_username = os.getenv("DATABASE_USERNAME")
 db_password = os.getenv("DATABASE_PASSWORD")
 db_name = os.getenv("DATABASE_NAME")
+db_host = os.getenv("DATABASE_HOST")
+db_port = os.getenv("DATABASE_PORT", 3306)
+db_url = os.getenv("DATABASE_URL", f'mysql+pymysql://{db_username}:{db_password}@mysql_db/{db_name}')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_username}:{db_password}@mysql_db/{db_name}'
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
-app.config["SQLALCHEMY_TRACK_NOTIFICATIONS"] = False
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 UPLOAD_FOLDER = './files'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'docx'}

@@ -1,23 +1,4 @@
 services:
-  mysql_db:
-    image: mysql:8
-    container_name: mysql_db
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_USER: ${DATABASE_USERNAME}
-      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_DATABASE: ${DATABASE_NAME}
-    ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -u root -p$MYSQL_ROOT_PASSWORD"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
   flask_app:
     build:
       context: .
@@ -32,9 +13,3 @@ services:
       - ./files:/app/files
     environment:
       - FLASK_ENV=${FLASK_ENV}
-      - DATABASE_URI=mysql+pymysql://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@mysql_db/${DATABASE_NAME}
-    
-
-volumes:
-  db_data:
-
