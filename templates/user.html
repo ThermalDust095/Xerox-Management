@@ -77,8 +77,8 @@
 <script>
 
 AOS.init();
-const POST_ORDER_URL = "{{ url_for('post_order'), usn= '__USN__' }}"
-const UPLOAD_FILE_URL = "{{ url_for('upload_file'), order_id= '__ORDER__' }}"
+const POST_ORDER_URL = "{{ url_for('post_order', usn= '__USN__' )}}"
+const UPLOAD_FILE_URL = "{{ url_for('upload_file', order_id= '__ORDER__') }}"
 
 $("#other-div").hide()
 $("#orderForm").submit(async function(e){
