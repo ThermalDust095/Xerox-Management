@@ -1,3 +1,4 @@
+import os
 from flask import Flask, flash, request, redirect, url_for, send_from_directory, render_template
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
@@ -9,12 +10,19 @@ import os
 import random
 import string
 from flask_bcrypt import Bcrypt 
-
+from dotenv import load_dotenv
 
 app = Flask(__name__, static_folder="./public")
 CORS(app)
 bcrypt = Bcrypt(app) 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:Root-123@localhost/xerox"
+
+load_dotenv()
+
+db_username = os.getenv("DATABASE_USERNAME")
+db_password = os.getenv("DATABASE_PASSWORD")
+db_name = os.getenv("DATABASE_NAME")
+
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@localhost/{db_name}'
 app.config["SQLALCHEMY_TRACK_NOTIFICATIONS"] = False
 
 UPLOAD_FOLDER = './files'
