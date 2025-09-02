@@ -43,8 +43,9 @@ function create_div(sampleOrder) {
 
   const fileContainer = document.createElement("div");
   fileContainer.className = "file-container";
+  FILE_DOWNLOAD_URL = `{{url_for('download_file', name='${sampleOrder.file}')}}`
   fileContainer.innerHTML = `
-    <p><a href="http://127.0.0.1:5000/download/${sampleOrder.file}" target="__blank" id="fileLink"><img src="img/file-img.png" alt="File Image" class="file-image"></a></p>`;
+    <p><a href="${FILE_DOWNLOAD_URL}" target="__blank" id="fileLink"><img src="img/file-img.png" alt="File Image" class="file-image"></a></p>`;
 
   orderDetails.appendChild(fileContainer);
 
@@ -67,7 +68,7 @@ function create_div(sampleOrder) {
 
   acceptMessage.addEventListener("click", async function() {
     console.log("Accepted");
-    await fetch("http://127.0.0.1:5000//update-order-status", {
+    await fetch("{{url_for('update_order')}}", {
       method: "POST",
       body: JSON.stringify({
         order_id: sampleOrder.id,
@@ -79,7 +80,7 @@ function create_div(sampleOrder) {
 
   rejectMessage.addEventListener("click", async function() {
     console.log("Rejected");
-    await fetch("http://127.0.0.1:5000//update-order-status", {
+    await fetch("{{url_for('update_order')}}", {
       method: "POST",
       body: JSON.stringify({
         order_id: sampleOrder.id,
