@@ -77,7 +77,8 @@
 <script>
 
 AOS.init();
-
+const POST_ORDER_URL = "{{ url_for('post_order'), usn= '__USN__' }}"
+const UPLOAD_FILE_URL = "{{ url_for('upload_file'), order_id= '__ORDER__' }}"
 
 $("#other-div").hide()
 $("#orderForm").submit(async function(e){
@@ -91,7 +92,7 @@ $("#orderForm").submit(async function(e){
     formData.append("file", file)
     formData.append('desc', $("#description").val())
 
-    await fetch("http://127.0.0.1:5000/post-user", {  
+    await fetch("{{ url_for('post_user') }}", {  
     method: "POST",
     headers: {
         "Content-Type": "application/json" // Specify the content type as JSON
@@ -103,7 +104,7 @@ $("#orderForm").submit(async function(e){
     mode: "cors"
     })
 
-    res = await fetch(`http://127.0.0.1:5000/post-order/${usn}`, {
+    res = await fetch(POST_ORDER_URL.replace('__USN__', usn), {
         method: "POST"
     })
 
@@ -112,7 +113,7 @@ $("#orderForm").submit(async function(e){
 
     console.log(order_id)
 
-    res = await fetch(`http://127.0.0.1:5000/upload-file/${order_id}`,{
+    res = await fetch(UPLOAD_FILE_URL.replace('__ORDER__', order_id),{
         method: "POST",
         body: formData
     })
