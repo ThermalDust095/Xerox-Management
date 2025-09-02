@@ -21,7 +21,8 @@ db_username = os.getenv("DATABASE_USERNAME")
 db_password = os.getenv("DATABASE_PASSWORD")
 db_name = os.getenv("DATABASE_NAME")
 
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@localhost/{db_name}'
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@mysql_db/{db_name}'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URI")
 app.config["SQLALCHEMY_TRACK_NOTIFICATIONS"] = False
 
 UPLOAD_FOLDER = './files'
@@ -318,4 +319,4 @@ def new_order():
 def order_history():
     return render_template("dbms5.html")
 
-app.run(port=5000, debug=True)  
+app.run(host="0.0.0.0",port=5000, debug=True)  
